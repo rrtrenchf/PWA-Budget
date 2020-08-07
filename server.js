@@ -21,6 +21,7 @@ mongoose.connect("mongodb://localhost/budget", {
 });
 
 // routes
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/PWA_Budget", { useNewUrlParser: true });
 app.use(require("./routes/api.js"));
 
 app.listen(PORT, () => {
